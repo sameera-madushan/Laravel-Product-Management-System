@@ -29,7 +29,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($product as $product)
+                    @foreach ($products as $product)
                     <tr>
                         {{-- <th scope="row">{{$product->id}}</th> --}}
                         <td>{{$product->pcode}}</td>

@@ -2,10 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form class="d-flex" method="GET">
-        <input type="text" name="query" id="search" placeholder="Enter search name" class="form-control">
-        <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Search</button>
-    </form>
+    <h1>Product View</h1>
 <div class="row mb-2">
     @foreach ($products as $product)
     <div class="col-md-6 mt-4">

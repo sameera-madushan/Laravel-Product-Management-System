@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::get('/product/{productID}/view', [App\Http\Controllers\ProductController::class, 'view'])->name('product.view');
-Route::get('/admin/search', [App\Http\Controllers\ProductController::class, 'search'])->name('product.search');
+Route::get('/search', [App\Http\Controllers\ProductController::class, 'search'])->name('product.search');
 
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('admin.dashboard');
@@ -32,7 +32,6 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/product/{productID}/edit', [App\Http\Controllers\ProductController::class, 'edit'])->name('product.edit');
     Route::post('/product/{productID}/update', [App\Http\Controllers\ProductController::class, 'update'])->name('product.update');
     Route::get('/product/{productID}/delete', [App\Http\Controllers\ProductController::class, 'delete'])->name('product.delete');
-
 
     Route::get('/category/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create');
     Route::post('/category/save', [App\Http\Controllers\CategoryController::class, 'save'])->name('category.save');

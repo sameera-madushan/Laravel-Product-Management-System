@@ -85,10 +85,15 @@ class ProductController extends Controller
         return redirect(route('product.all'))->with('status', 'Product Updated Successfully');
     }
 
-    public function allProducts(){
+    public function allProducts()
+    {
+        $user = Auth::user();
 
-        $product = Product::where('user_id', Auth::user()->id)->get();
-        return view('products.all', compact('product'));
+        $products = Product::where('user_id', $user->id)
+            ->orderBy('pdon')
+            ->get();
+
+        return view('products.all', compact('products'));
     }
 
     public function delete($productID){
